@@ -22,13 +22,6 @@
             </div>
             
             <nav class="sidebar-nav">
-                <div class="nav-group">
-                    <h3 class="nav-title">TỔNG QUAN</h3>
-                    <a href="dashboard.html" class="nav-item">
-                        <i class="fa-solid fa-chart-pie"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </div>
 
                 <div class="nav-group">
                     <h3 class="nav-title">CẤU HÌNH</h3>
@@ -100,7 +93,24 @@
                         </div>
                         <div class="header-actions">
                             <button class="btn btn-outline"><i class="fa-solid fa-download"></i> Tải Template</button>
-                            <button class="btn btn-primary" onclick="openModal('modal-adjustment')"><i class="fa-solid fa-plus"></i> Tạo Phiếu ĐC</button>
+                            <button class="btn btn-primary" onclick="window.location.href='adjustment-create.html'"><i class="fa-solid fa-plus"></i> Tạo Phiếu ĐC</button>
+                        </div>
+                    </div>
+                    <div class="dashboard-cards" style="margin-bottom: 2rem;">
+                        <div class="stat-card">
+                            <div class="stat-icon bg-blue-light"><i class="fa-solid fa-file-signature text-blue"></i>
+                            </div>
+                            <div class="stat-details">
+                                <h3>Phiếu chờ duyệt</h3>
+                                <p class="stat-number">12</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon bg-red-light"><i class="fa-solid fa-triangle-exclamation text-red"></i></div>
+                            <div class="stat-details">
+                                <h3>Sản phẩm hết hàng</h3>
+                                <p class="stat-number">34</p>
+                            </div>
                         </div>
                     </div>
                     <div class="card">
@@ -206,61 +216,7 @@
         </div>
     </div>
 
-    <!-- Modal: Phiếu điều chỉnh -->
-    <div id="modal-adjustment" class="modal modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Tạo Phiếu Điều chỉnh Tồn kho</h2>
-                <button class="close-btn" onclick="closeModal('modal-adjustment')"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <div class="modal-body">
-                <div class="form-row">
-                    <div class="form-group flex-1">
-                        <label>Lý do điều chỉnh</label>
-                        <input type="text" class="form-control" placeholder="Nhập lý do...">
-                    </div>
-                    <div class="form-group">
-                        <label>Import từ Excel</label>
-                        <input type="file" class="form-control">
-                    </div>
-                </div>
-                
-                <h4 style="margin: 1.5rem 0 1rem; color: #1e293b;">Danh sách Sản phẩm</h4>
-                <table class="data-table border-table">
-                    <thead>
-                        <tr>
-                            <th>Sản phẩm / Variant</th>
-                            <th>ĐVT</th>
-                            <th>Tồn hiện tại</th>
-                            <th>Tồn thực tế</th>
-                            <th>Chênh lệch</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <select class="form-control">
-                                    <option>Laptop Dell XPS 13 - Core i7</option>
-                                </select>
-                            </td>
-                            <td>Cái</td>
-                            <td>50</td>
-                            <td><input type="number" class="form-control" value="48" style="width: 80px;"></td>
-                            <td class="text-red">-2</td>
-                            <td><button class="action-btn text-red"><i class="fa-solid fa-trash"></i></button></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button class="btn btn-outline btn-sm" style="margin-top: 10px;"><i class="fa-solid fa-plus"></i> Thêm dòng</button>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-outline" onclick="closeModal('modal-adjustment')">Hủy</button>
-                <button class="btn btn-outline">Lưu Nháp</button>
-                <button class="btn btn-primary" onclick="closeModal('modal-adjustment')">Gửi Duyệt</button>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Modal: Xử lý Hoàn/Hủy -->
     <div id="modal-return" class="modal modal-lg">
