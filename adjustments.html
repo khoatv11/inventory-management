@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="light-mode">
     <div class="app-container">
         <!-- Sidebar -->
@@ -20,7 +22,7 @@
                     <h2>Inventory<span class="text-primary">Pro</span></h2>
                 </div>
             </div>
-            
+
             <nav class="sidebar-nav">
 
                 <div class="nav-group">
@@ -59,7 +61,7 @@
                     </a>
                 </div>
             </nav>
-            
+
             <div class="sidebar-footer">
                 <div class="user-profile">
                     <img src="https://ui-avatars.com/api/?name=Admin&background=F5821F&color=fff" alt="Admin">
@@ -89,11 +91,11 @@
                     <div class="page-header">
                         <div>
                             <h1 class="page-title">Phiếu Điều chỉnh Tồn kho</h1>
-                            <p class="page-subtitle">Quản lý yêu cầu điều chỉnh tồn kho (Thêm, Import, Sửa, Duyệt)</p>
                         </div>
                         <div class="header-actions">
-                            <button class="btn btn-outline"><i class="fa-solid fa-download"></i> Tải Template</button>
-                            <button class="btn btn-primary" onclick="window.location.href='adjustment-create.html'"><i class="fa-solid fa-plus"></i> Tạo Phiếu ĐC</button>
+                            <!-- <button class="btn btn-outline"><i class="fa-solid fa-download"></i> Tải Template</button> -->
+                            <button class="btn btn-primary" onclick="window.location.href='adjustment-create.html'"><i
+                                    class="fa-solid fa-plus"></i> Tạo Phiếu ĐC</button>
                         </div>
                     </div>
                     <div class="dashboard-cards" style="margin-bottom: 2rem;">
@@ -106,7 +108,8 @@
                             </div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-icon bg-red-light"><i class="fa-solid fa-triangle-exclamation text-red"></i></div>
+                            <div class="stat-icon bg-red-light"><i
+                                    class="fa-solid fa-triangle-exclamation text-red"></i></div>
                             <div class="stat-details">
                                 <h3>Sản phẩm hết hàng</h3>
                                 <p class="stat-number">34</p>
@@ -114,13 +117,22 @@
                         </div>
                     </div>
                     <div class="card">
-                        <div class="table-filters">
-                            <select class="form-control">
-                                <option>Tất cả trạng thái</option>
-                                <option>Nháp</option>
-                                <option>Chờ duyệt</option>
-                                <option>Đã duyệt</option>
-                            </select>
+                        <div class="table-filters"
+                            style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1.5rem;">
+                            <div class="search-box" style="position: relative; flex: 1; max-width: 300px;">
+                                <i class="fa-solid fa-search"
+                                    style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #94a3b8;"></i>
+                                <input type="text" class="form-control" placeholder="Tìm kiếm theo tên partner..."
+                                    style="padding-left: 2.5rem; width: 100%;">
+                            </div>
+                            <div class="filter-box" style="width: 200px;">
+                                <select class="form-control" style="width: 100%;">
+                                    <option>Tất cả trạng thái</option>
+                                    <option>Nháp</option>
+                                    <option>Chờ duyệt</option>
+                                    <option>Đã duyệt</option>
+                                </select>
+                            </div>
                         </div>
                         <table class="data-table">
                             <thead>
@@ -141,8 +153,10 @@
                                     <td>Kiểm kê kho tháng 4</td>
                                     <td><span class="status-badge status-warning">Chờ duyệt</span></td>
                                     <td>
-                                        <button class="action-btn" title="Xem chi tiết"><i class="fa-solid fa-eye"></i></button>
-                                        <button class="action-btn text-primary" title="Duyệt"><i class="fa-solid fa-check-double"></i></button>
+                                        <button class="action-btn" title="Xem chi tiết"><i
+                                                class="fa-solid fa-eye"></i></button>
+                                        <button class="action-btn text-primary" title="Duyệt"><i
+                                                class="fa-solid fa-check-double"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -152,8 +166,10 @@
                                     <td>Hàng hư hỏng</td>
                                     <td><span class="status-badge status-draft">Nháp</span></td>
                                     <td>
-                                        <button class="action-btn" title="Chỉnh sửa"><i class="fa-solid fa-pen"></i></button>
-                                        <button class="action-btn text-red" title="Xóa"><i class="fa-solid fa-trash"></i></button>
+                                        <button class="action-btn" title="Chỉnh sửa"><i
+                                                class="fa-solid fa-pen"></i></button>
+                                        <button class="action-btn text-red" title="Xóa"><i
+                                                class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
@@ -163,7 +179,8 @@
                                     <td>Nhập hàng bù</td>
                                     <td><span class="status-badge status-success">Đã duyệt</span></td>
                                     <td>
-                                        <button class="action-btn" title="Xem chi tiết"><i class="fa-solid fa-eye"></i></button>
+                                        <button class="action-btn" title="Xem chi tiết"><i
+                                                class="fa-solid fa-eye"></i></button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -181,7 +198,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Cấu hình Sản phẩm</h2>
-                <button class="close-btn" onclick="closeModal('modal-product')"><i class="fa-solid fa-xmark"></i></button>
+                <button class="close-btn" onclick="closeModal('modal-product')"><i
+                        class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="modal-body">
                 <div class="form-group">
@@ -204,7 +222,8 @@
                                 <input type="checkbox" checked>
                                 <span class="slider round"></span>
                             </label>
-                            <span style="margin-left: 10px; font-size: 0.9rem; color: #64748b;">Bật để theo dõi số lượng</span>
+                            <span style="margin-left: 10px; font-size: 0.9rem; color: #64748b;">Bật để theo dõi số
+                                lượng</span>
                         </div>
                     </div>
                 </div>
@@ -223,14 +242,15 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Duyệt Yêu cầu Hoàn/Hủy Đơn Hàng</h2>
-                <button class="close-btn" onclick="closeModal('modal-return')"><i class="fa-solid fa-xmark"></i></button>
+                <button class="close-btn" onclick="closeModal('modal-return')"><i
+                        class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="modal-body">
                 <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
                     <p><strong>Mã đơn:</strong> ORD-9923 | <strong>Khách hàng:</strong> Nguyễn Văn A</p>
                     <p><strong>Lý do:</strong> Sản phẩm không đúng mô tả</p>
                 </div>
-                
+
                 <h4 style="margin-bottom: 1rem; color: #1e293b;">Danh sách sản phẩm hoàn trả</h4>
                 <table class="data-table border-table">
                     <thead>
@@ -253,7 +273,8 @@
                                 </select>
                             </td>
                             <td>
-                                <span class="text-success"><i class="fa-solid fa-plus-circle"></i> Cộng lại tồn kho</span>
+                                <span class="text-success"><i class="fa-solid fa-plus-circle"></i> Cộng lại tồn
+                                    kho</span>
                             </td>
                         </tr>
                         <tr>
@@ -266,7 +287,8 @@
                                 </select>
                             </td>
                             <td>
-                                <span class="text-red"><i class="fa-solid fa-minus-circle"></i> Không cộng tồn kho</span>
+                                <span class="text-red"><i class="fa-solid fa-minus-circle"></i> Không cộng tồn
+                                    kho</span>
                             </td>
                         </tr>
                     </tbody>
@@ -285,4 +307,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
