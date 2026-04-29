@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Tồn kho - Admin Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <h2>Inventory<span class="text-primary">Pro</span></h2>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-group">
+                    <h3 class="nav-title">TỔNG QUAN</h3>
+                    <a href="dashboard.html" class="nav-item">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </div>
+
+                <div class="nav-group">
+                    <h3 class="nav-title">CẤU HÌNH</h3>
+                    <a href="units.html" class="nav-item">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <span>Đơn vị tính</span>
+                    </a>
+                    <a href="products.html" class="nav-item active">
+                        <i class="fa-solid fa-box-open"></i>
+                        <span>Quản lý sản phẩm</span>
+                    </a>
+                </div>
+
+                <div class="nav-group">
+                    <h3 class="nav-title">NGHIỆP VỤ</h3>
+                    <a href="adjustments.html" class="nav-item">
+                        <i class="fa-solid fa-file-invoice"></i>
+                        <span>Phiếu ĐC tồn kho</span>
+                    </a>
+                    <a href="returns.html" class="nav-item">
+                        <i class="fa-solid fa-arrow-rotate-left"></i>
+                        <span>Yêu cầu hoàn hủy</span>
+                    </a>
+                </div>
+
+                <div class="nav-group">
+                    <h3 class="nav-title">BÁO CÁO</h3>
+                    <a href="report-fluctuation.html" class="nav-item">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Biến động tồn kho</span>
+                    </a>
+                    <a href="report-overall.html" class="nav-item">
+                        <i class="fa-solid fa-warehouse"></i>
+                        <span>Tồn kho tổng</span>
+                    </a>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=F5821F&color=fff" alt="Admin">
+                    <div class="user-info">
+                        <h4>Admin User</h4>
+                        <span>Hệ thống</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-search">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Tìm kiếm chức năng, mã phiếu...">
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="badge">3</span></button>
+                    <button class="icon-btn"><i class="fa-solid fa-gear"></i></button>
+                </div>
+            </header>
+
+            <div class="view-container">
+                <div id="view-products" class="view active">
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">Quản lý Sản phẩm</h1>
+                            <p class="page-subtitle">Bổ sung cấu hình quản lý tồn kho và đơn vị tính</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="openModal('modal-product')"><i class="fa-solid fa-plus"></i> Thêm Sản phẩm</button>
+                    </div>
+                    <div class="card">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Mã SP</th>
+                                    <th>Tên Sản phẩm</th>
+                                    <th>Đơn vị tính</th>
+                                    <th>Quản lý tồn kho</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>SP001</td>
+                                    <td>Laptop Dell XPS 13</td>
+                                    <td>Cái</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" checked disabled>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <button class="action-btn" onclick="openModal('modal-product')"><i class="fa-solid fa-pen"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>SP002</td>
+                                    <td>Dịch vụ bảo trì phần mềm</td>
+                                    <td>Gói</td>
+                                    <td>
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <button class="action-btn" onclick="openModal('modal-product')"><i class="fa-solid fa-pen"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <!-- Modal: Sản phẩm (Tồn kho & ĐVT) -->
+    <div id="modal-product" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Cấu hình Sản phẩm</h2>
+                <button class="close-btn" onclick="closeModal('modal-product')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Tên Sản phẩm</label>
+                    <input type="text" class="form-control" value="Laptop Dell XPS 13">
+                </div>
+                <div class="form-row">
+                    <div class="form-group flex-1">
+                        <label>Đơn vị tính</label>
+                        <select class="form-control">
+                            <option>Cái</option>
+                            <option>Hộp</option>
+                            <option>Chiếc</option>
+                        </select>
+                    </div>
+                    <div class="form-group flex-1">
+                        <label>Quản lý Tồn kho</label>
+                        <div style="margin-top: 10px;">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                            <span style="margin-left: 10px; font-size: 0.9rem; color: #64748b;">Bật để theo dõi số lượng</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeModal('modal-product')">Hủy</button>
+                <button class="btn btn-primary" onclick="closeModal('modal-product')">Lưu thay đổi</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Phiếu điều chỉnh -->
+    <div id="modal-adjustment" class="modal modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Tạo Phiếu Điều chỉnh Tồn kho</h2>
+                <button class="close-btn" onclick="closeModal('modal-adjustment')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row">
+                    <div class="form-group flex-1">
+                        <label>Lý do điều chỉnh</label>
+                        <input type="text" class="form-control" placeholder="Nhập lý do...">
+                    </div>
+                    <div class="form-group">
+                        <label>Import từ Excel</label>
+                        <input type="file" class="form-control">
+                    </div>
+                </div>
+                
+                <h4 style="margin: 1.5rem 0 1rem; color: #1e293b;">Danh sách Sản phẩm</h4>
+                <table class="data-table border-table">
+                    <thead>
+                        <tr>
+                            <th>Sản phẩm / Variant</th>
+                            <th>ĐVT</th>
+                            <th>Tồn hiện tại</th>
+                            <th>Tồn thực tế</th>
+                            <th>Chênh lệch</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <select class="form-control">
+                                    <option>Laptop Dell XPS 13 - Core i7</option>
+                                </select>
+                            </td>
+                            <td>Cái</td>
+                            <td>50</td>
+                            <td><input type="number" class="form-control" value="48" style="width: 80px;"></td>
+                            <td class="text-red">-2</td>
+                            <td><button class="action-btn text-red"><i class="fa-solid fa-trash"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-outline btn-sm" style="margin-top: 10px;"><i class="fa-solid fa-plus"></i> Thêm dòng</button>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeModal('modal-adjustment')">Hủy</button>
+                <button class="btn btn-outline">Lưu Nháp</button>
+                <button class="btn btn-primary" onclick="closeModal('modal-adjustment')">Gửi Duyệt</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Xử lý Hoàn/Hủy -->
+    <div id="modal-return" class="modal modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Duyệt Yêu cầu Hoàn/Hủy Đơn Hàng</h2>
+                <button class="close-btn" onclick="closeModal('modal-return')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div style="background: #f8fafc; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                    <p><strong>Mã đơn:</strong> ORD-9923 | <strong>Khách hàng:</strong> Nguyễn Văn A</p>
+                    <p><strong>Lý do:</strong> Sản phẩm không đúng mô tả</p>
+                </div>
+                
+                <h4 style="margin-bottom: 1rem; color: #1e293b;">Danh sách sản phẩm hoàn trả</h4>
+                <table class="data-table border-table">
+                    <thead>
+                        <tr>
+                            <th>Sản phẩm</th>
+                            <th>SL</th>
+                            <th>Trạng thái hàng</th>
+                            <th>Xử lý Tồn kho</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Laptop Dell XPS 13</td>
+                            <td>1</td>
+                            <td>
+                                <select class="form-control">
+                                    <option>Nguyên vẹn</option>
+                                    <option>Hư hỏng</option>
+                                    <option>Bóc seal</option>
+                                </select>
+                            </td>
+                            <td>
+                                <span class="text-success"><i class="fa-solid fa-plus-circle"></i> Cộng lại tồn kho</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Chuột không dây Logitech</td>
+                            <td>1</td>
+                            <td>
+                                <select class="form-control">
+                                    <option selected>Hư hỏng</option>
+                                    <option>Nguyên vẹn</option>
+                                </select>
+                            </td>
+                            <td>
+                                <span class="text-red"><i class="fa-solid fa-minus-circle"></i> Không cộng tồn kho</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="form-group" style="margin-top: 1.5rem;">
+                    <label>Ghi chú duyệt</label>
+                    <textarea class="form-control" rows="2"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeModal('modal-return')">Hủy</button>
+                <button class="btn btn-primary" onclick="closeModal('modal-return')">Duyệt & Cập nhật Tồn kho</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

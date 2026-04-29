@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Tồn kho - Admin Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+                    <h2>Inventory<span class="text-primary">Pro</span></h2>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <div class="nav-group">
+                    <h3 class="nav-title">TỔNG QUAN</h3>
+                    <a href="dashboard.html" class="nav-item">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </div>
+
+                <div class="nav-group">
+                    <h3 class="nav-title">CẤU HÌNH</h3>
+                    <a href="units.html" class="nav-item active">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <span>Đơn vị tính</span>
+                    </a>
+                    <a href="products.html" class="nav-item">
+                        <i class="fa-solid fa-box-open"></i>
+                        <span>Quản lý sản phẩm</span>
+                    </a>
+                </div>
+
+                <div class="nav-group">
+                    <h3 class="nav-title">NGHIỆP VỤ</h3>
+                    <a href="adjustments.html" class="nav-item">
+                        <i class="fa-solid fa-file-invoice"></i>
+                        <span>Phiếu ĐC tồn kho</span>
+                    </a>
+                    <a href="returns.html" class="nav-item">
+                        <i class="fa-solid fa-arrow-rotate-left"></i>
+                        <span>Yêu cầu hoàn hủy</span>
+                    </a>
+                </div>
+
+                <div class="nav-group">
+                    <h3 class="nav-title">BÁO CÁO</h3>
+                    <a href="report-fluctuation.html" class="nav-item">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Biến động tồn kho</span>
+                    </a>
+                    <a href="report-overall.html" class="nav-item">
+                        <i class="fa-solid fa-warehouse"></i>
+                        <span>Tồn kho tổng</span>
+                    </a>
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=F5821F&color=fff" alt="Admin">
+                    <div class="user-info">
+                        <h4>Admin User</h4>
+                        <span>Hệ thống</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-search">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Tìm kiếm chức năng, mã phiếu...">
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="badge">3</span></button>
+                    <button class="icon-btn"><i class="fa-solid fa-gear"></i></button>
+                </div>
+            </header>
+
+            <div class="view-container">
+                <div id="view-units" class="view active">
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">Danh mục Đơn vị tính</h1>
+                            <p class="page-subtitle">Quản lý các đơn vị đo lường cho sản phẩm</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="openModal('modal-unit-add')"><i class="fa-solid fa-plus"></i> Thêm ĐVT</button>
+                    </div>
+                    <div class="card">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Mã ĐVT</th>
+                                    <th>Tên ĐVT</th>
+                                    <th>Mô tả</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CAI</td>
+                                    <td>Cái</td>
+                                    <td>Đơn vị đếm cơ bản (sản phẩm nguyên chiếc)</td>
+                                    <td><span class="status-badge status-active">Hoạt động</span></td>
+                                    <td>
+                                        <button class="action-btn" title="Xem chi tiết" onclick="openModal('modal-unit-view')"><i class="fa-solid fa-eye"></i></button>
+                                        <button class="action-btn" title="Sửa" onclick="openModal('modal-unit-edit')"><i class="fa-solid fa-pen"></i></button>
+                                        <button class="action-btn text-red" title="Xóa"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>HOP</td>
+                                    <td>Hộp</td>
+                                    <td>Đóng gói theo hộp (thường chứa nhiều cái)</td>
+                                    <td><span class="status-badge status-active">Hoạt động</span></td>
+                                    <td>
+                                        <button class="action-btn" title="Xem chi tiết" onclick="openModal('modal-unit-view')"><i class="fa-solid fa-eye"></i></button>
+                                        <button class="action-btn" title="Sửa" onclick="openModal('modal-unit-edit')"><i class="fa-solid fa-pen"></i></button>
+                                        <button class="action-btn text-red" title="Xóa"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>THUNG</td>
+                                    <td>Thùng</td>
+                                    <td>Đơn vị lưu kho lớn (chứa nhiều hộp)</td>
+                                    <td><span class="status-badge status-active">Hoạt động</span></td>
+                                    <td>
+                                        <button class="action-btn" title="Xem chi tiết" onclick="openModal('modal-unit-view')"><i class="fa-solid fa-eye"></i></button>
+                                        <button class="action-btn" title="Sửa" onclick="openModal('modal-unit-edit')"><i class="fa-solid fa-pen"></i></button>
+                                        <button class="action-btn text-red" title="Xóa"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>BO</td>
+                                    <td>Bộ</td>
+                                    <td>Sản phẩm bán theo bộ ráp sẵn</td>
+                                    <td><span class="status-badge status-active">Hoạt động</span></td>
+                                    <td>
+                                        <button class="action-btn" title="Xem chi tiết" onclick="openModal('modal-unit-view')"><i class="fa-solid fa-eye"></i></button>
+                                        <button class="action-btn" title="Sửa" onclick="openModal('modal-unit-edit')"><i class="fa-solid fa-pen"></i></button>
+                                        <button class="action-btn text-red" title="Xóa"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>GOI</td>
+                                    <td>Gói</td>
+                                    <td>Đơn vị dịch vụ (phần mềm, bảo hành)</td>
+                                    <td><span class="status-badge status-active">Hoạt động</span></td>
+                                    <td>
+                                        <button class="action-btn" title="Xem chi tiết" onclick="openModal('modal-unit-view')"><i class="fa-solid fa-eye"></i></button>
+                                        <button class="action-btn" title="Sửa" onclick="openModal('modal-unit-edit')"><i class="fa-solid fa-pen"></i></button>
+                                        <button class="action-btn text-red" title="Xóa"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>KG</td>
+                                    <td>Kilogram</td>
+                                    <td>Đơn vị đo khối lượng (hàng rời)</td>
+                                    <td><span class="status-badge status-draft">Tạm khóa</span></td>
+                                    <td>
+                                        <button class="action-btn" title="Xem chi tiết" onclick="openModal('modal-unit-view')"><i class="fa-solid fa-eye"></i></button>
+                                        <button class="action-btn" title="Sửa" onclick="openModal('modal-unit-edit')"><i class="fa-solid fa-pen"></i></button>
+                                        <button class="action-btn text-red" title="Xóa"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <!-- Modal: Thêm ĐVT -->
+    <div id="modal-unit-add" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Thêm mới Đơn vị tính</h2>
+                <button class="close-btn" onclick="closeModal('modal-unit-add')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Mã ĐVT <span class="text-red">*</span></label>
+                    <input type="text" class="form-control" placeholder="VD: LIT">
+                </div>
+                <div class="form-group">
+                    <label>Tên ĐVT <span class="text-red">*</span></label>
+                    <input type="text" class="form-control" placeholder="VD: Lít">
+                </div>
+                <div class="form-group">
+                    <label>Mô tả</label>
+                    <textarea class="form-control" rows="3" placeholder="Nhập mô tả chi tiết..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Trạng thái</label>
+                    <div style="margin-top: 10px;">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <span style="margin-left: 10px; font-size: 0.9rem;">Hoạt động</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeModal('modal-unit-add')">Hủy</button>
+                <button class="btn btn-primary" onclick="closeModal('modal-unit-add')">Lưu ĐVT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Xem ĐVT -->
+    <div id="modal-unit-view" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Chi tiết Đơn vị tính</h2>
+                <button class="close-btn" onclick="closeModal('modal-unit-view')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Mã ĐVT</label>
+                    <input type="text" class="form-control" value="CAI" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Tên ĐVT</label>
+                    <input type="text" class="form-control" value="Cái" disabled>
+                </div>
+                <div class="form-group">
+                    <label>Mô tả</label>
+                    <textarea class="form-control" rows="3" disabled>Đơn vị đếm cơ bản (sản phẩm nguyên chiếc)</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Trạng thái</label>
+                    <div style="margin-top: 10px;">
+                        <span class="status-badge status-active">Hoạt động</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeModal('modal-unit-view')">Đóng</button>
+                <button class="btn btn-primary" onclick="closeModal('modal-unit-view'); openModal('modal-unit-edit')">Chuyển sang Sửa</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Sửa ĐVT -->
+    <div id="modal-unit-edit" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Sửa Đơn vị tính</h2>
+                <button class="close-btn" onclick="closeModal('modal-unit-edit')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Mã ĐVT <span class="text-red">*</span></label>
+                    <input type="text" class="form-control" value="CAI" disabled title="Mã ĐVT không thể sửa đổi">
+                </div>
+                <div class="form-group">
+                    <label>Tên ĐVT <span class="text-red">*</span></label>
+                    <input type="text" class="form-control" value="Cái">
+                </div>
+                <div class="form-group">
+                    <label>Mô tả</label>
+                    <textarea class="form-control" rows="3">Đơn vị đếm cơ bản (sản phẩm nguyên chiếc)</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Trạng thái</label>
+                    <div style="margin-top: 10px;">
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <span style="margin-left: 10px; font-size: 0.9rem;">Hoạt động</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeModal('modal-unit-edit')">Hủy</button>
+                <button class="btn btn-primary" onclick="closeModal('modal-unit-edit')">Cập nhật ĐVT</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
