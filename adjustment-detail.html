@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tạo Phiếu Điều chỉnh - Admin Portal</title>
+    <title>Chi tiết Phiếu Điều chỉnh - Admin Portal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -31,10 +31,6 @@
                         <i class="fa-solid fa-scale-balanced"></i>
                         <span>Đơn vị tính</span>
                     </a>
-                    <!-- <a href="products.html" class="nav-item">
-                        <i class="fa-solid fa-box-open"></i>
-                        <span>Quản lý sản phẩm</span>
-                    </a> -->
                 </div>
 
                 <div class="nav-group">
@@ -43,10 +39,6 @@
                         <i class="fa-solid fa-file-invoice"></i>
                         <span>Phiếu ĐC tồn kho</span>
                     </a>
-                    <!-- <a href="returns.html" class="nav-item">
-                        <i class="fa-solid fa-arrow-rotate-left"></i>
-                        <span>Yêu cầu hoàn hủy</span>
-                    </a> -->
                 </div>
 
                 <div class="nav-group">
@@ -92,32 +84,23 @@
                         <div style="margin-bottom: 0.5rem;"><a href="adjustments.html"
                                 style="color: #0f172a; text-decoration: none; font-size: 0.9rem;"><i
                                     class="fa-solid fa-arrow-left"></i> Quay lại Danh sách</a></div>
-                        <h1 class="page-title">Tạo mới Phiếu Điều chỉnh Tồn kho</h1>
+                        <h1 class="page-title">Chi tiết Phiếu Điều chỉnh #ADJ-202605-001</h1>
                     </div>
                     <div class="header-actions">
-                        <button class="btn btn-outline" onclick="window.location.href='adjustments.html'">Hủy</button>
-                        <button class="btn btn-outline">Lưu Nháp</button>
-                        <button class="btn btn-primary" onclick="window.location.href='adjustments.html'">Hoàn thành &
-                            Gửi Duyệt</button>
+                        <button class="btn btn-outline" style="color: #ef4444; border-color: #ef4444;" onclick="window.location.href='adjustments.html'">Từ chối</button>
+                        <button class="btn btn-primary" onclick="window.location.href='adjustments.html'">Duyệt Phiếu</button>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="form-group">
-                        <label>Lý do điều chỉnh <span class="text-red">*</span></label>
-                        <textarea class="form-control" rows="2"
-                            placeholder="VD: Kiểm kê định kỳ, Hàng hư hỏng..."></textarea>
+                        <label>Lý do điều chỉnh</label>
+                        <textarea class="form-control" rows="2" disabled style="background-color: #f8fafc; color: #475569;">Kiểm kê định kỳ đầu tháng 5/2026. Một số sản phẩm bị sai lệch do thất thoát và hỏng hóc.</textarea>
                     </div>
 
                     <div
                         style="display: flex; justify-content: space-between; align-items: center; margin: 2rem 0 1rem;">
                         <h4 style="color: #1e293b; margin: 0;">Danh sách Sản phẩm</h4>
-                        <div>
-                            <button class="btn btn-outline btn-sm" style="margin-right: 0.5rem;"><i
-                                    class="fa-solid fa-download"></i> Tải Template</button>
-                            <button class="btn btn-outline btn-sm"><i class="fa-solid fa-file-import"></i> Import
-                                Excel</button>
-                        </div>
                     </div>
 
                     <div style="overflow-x: auto;">
@@ -129,7 +112,6 @@
                                     <th style="text-align: center;">ĐVT</th>
                                     <th style="text-align: right;">Tồn On-hand</th>
                                     <th style="text-align: right;">SL sau điều chỉnh</th>
-                                    <th style="text-align: center;">Xóa</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -138,77 +120,43 @@
                                     <td style="color: #0f172a;">Core i7 / 16GB / 512GB SSD</td>
                                     <td style="text-align: center;">Cái</td>
                                     <td style="text-align: right;">50</td>
-                                    <td style="text-align: right;">
-                                        <input type="number" class="form-control" value="48"
-                                            style="width: 100px; text-align: right; color: #ef4444; background-color: white; border-color: #fca5a5; display: inline-block;">
-                                    </td>
-                                    <td style="text-align: center;"><button class="action-btn text-red"><i
-                                                class="fa-solid fa-trash"></i></button>
-                                    </td>
+                                    <td style="text-align: right; font-weight: 600; color: #ef4444;">48</td>
                                 </tr>
                                 <tr style="background-color: #ffb6b6;">
                                     <td style="font-weight: 500; color: #0f172a;">Bàn phím cơ Keychron K8</td>
                                     <td style="color: #0f172a;">Brown Switch / Nhôm</td>
                                     <td style="text-align: center;">Cái</td>
                                     <td style="text-align: right;">35</td>
-                                    <td style="text-align: right;">
-                                        <input type="number" class="form-control" value="30"
-                                            style="width: 100px; text-align: right; color: #ef4444; background-color: white; border-color: #fca5a5; display: inline-block;">
-                                    </td>
-                                    <td style="text-align: center;"><button class="action-btn text-red"><i
-                                                class="fa-solid fa-trash"></i></button>
-                                    </td>
+                                    <td style="text-align: right; font-weight: 600; color: #ef4444;">30</td>
                                 </tr>
                                 <tr>
                                     <td style="font-weight: 500; color: #0f172a;">Chuột không dây Logitech</td>
                                     <td style="color: #0f172a;">Màu đen</td>
                                     <td style="text-align: center;">Cái</td>
                                     <td style="text-align: right;">120</td>
-                                    <td style="text-align: right;">
-                                        <input type="number" class="form-control" value="125"
-                                            style="width: 100px; text-align: right; display: inline-block;">
-                                    </td>
-                                    <td style="text-align: center;"><button class="action-btn text-red"><i
-                                                class="fa-solid fa-trash"></i></button>
-                                    </td>
+                                    <td style="text-align: right; font-weight: 600;">125</td>
                                 </tr>
                                 <tr>
                                     <td style="font-weight: 500; color: #0f172a;">Màn hình LG 24 inch</td>
                                     <td style="color: #0f172a;">IPS / 75Hz / FreeSync</td>
                                     <td style="text-align: center;">Cái</td>
                                     <td style="text-align: right;">80</td>
-                                    <td style="text-align: right;">
-                                        <input type="number" class="form-control" value="85"
-                                            style="width: 100px; text-align: right; display: inline-block;">
-                                    </td>
-                                    <td style="text-align: center;"><button class="action-btn text-red"><i
-                                                class="fa-solid fa-trash"></i></button>
-                                    </td>
+                                    <td style="text-align: right; font-weight: 600;">85</td>
                                 </tr>
                                 <tr style="background-color: #ffb6b6;">
                                     <td style="font-weight: 500; color: #0f172a;">Tai nghe Sony WH-1000XM4</td>
                                     <td style="color: #0f172a;">Màu bạc</td>
                                     <td style="text-align: center;">Cái</td>
                                     <td style="text-align: right;">15</td>
-                                    <td style="text-align: right;">
-                                        <input type="number" class="form-control" value="12"
-                                            style="width: 100px; text-align: right; color: #ef4444; background-color: white; border-color: #fca5a5; display: inline-block;">
-                                    </td>
-                                    <td style="text-align: center;"><button class="action-btn text-red"><i
-                                                class="fa-solid fa-trash"></i></button>
-                                    </td>
+                                    <td style="text-align: right; font-weight: 600; color: #ef4444;">12</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <button class="btn btn-outline btn" style="margin-top: 15px;"><i class="fa-solid fa-plus"></i>
-                        Thêm sản phẩm</button>
-
                     <div class="form-group" style="margin-top: 2rem;">
                         <label>Ghi chú thêm</label>
-                        <textarea class="form-control" rows="3"
-                            placeholder="Nhập ghi chú chi tiết cho phiếu điều chỉnh..."></textarea>
+                        <textarea class="form-control" rows="3" disabled style="background-color: #f8fafc; color: #475569;">Cần đối soát lại số lượng tai nghe Sony và bàn phím Keychron trong kỳ kiểm kê tới.</textarea>
                     </div>
                 </div>
             </div>
