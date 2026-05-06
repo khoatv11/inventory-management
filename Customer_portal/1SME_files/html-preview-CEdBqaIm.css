@@ -1,0 +1,216 @@
+.tiptap {
+    min-height: 200px;
+    padding: .75rem 1rem
+}
+
+.tiptap p {
+    margin-top: .75rem;
+    margin-bottom: .75rem
+}
+
+.tiptap p:first-child {
+    margin-top: 0
+}
+
+.tiptap p:last-child {
+    margin-bottom: 0
+}
+
+.tiptap h1 {
+    margin-top: 1.5rem;
+    margin-bottom: .75rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700
+}
+
+.tiptap h1:first-child {
+    margin-top: 0
+}
+
+.tiptap h2 {
+    margin-top: 1.25rem;
+    margin-bottom: .5rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700
+}
+
+.tiptap h2:first-child {
+    margin-top: 0
+}
+
+.tiptap h3 {
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 600
+}
+
+.tiptap h3:first-child {
+    margin-top: 0
+}
+
+.tiptap ul {
+    margin-top: .75rem;
+    margin-bottom: .75rem;
+    list-style-position: outside;
+    list-style-type: disc;
+    padding-left: 1.5rem
+}
+
+.tiptap ol {
+    margin-top: .75rem;
+    margin-bottom: .75rem;
+    list-style-position: outside;
+    list-style-type: decimal;
+    padding-left: 1.5rem
+}
+
+.tiptap ul ul,
+.tiptap ol ul {
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+    list-style-type: circle;
+    padding-left: 1.5rem
+}
+
+.tiptap ol ol,
+.tiptap ul ol {
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+    list-style-type: lower-alpha;
+    padding-left: 1.5rem
+}
+
+.tiptap li {
+    margin-top: .25rem;
+    margin-bottom: .25rem
+}
+
+.tiptap li p {
+    margin: 0;
+    display: inline
+}
+
+.tiptap strong {
+    font-weight: 700
+}
+
+.tiptap em {
+    font-style: italic
+}
+
+.tiptap u {
+    text-decoration-line: underline
+}
+
+.tiptap a {
+    cursor: pointer;
+    --tw-text-opacity: 1;
+    color: rgb(245 130 31 / var(--tw-text-opacity, 1));
+    text-decoration-line: underline
+}
+
+.tiptap a:hover {
+    --tw-text-opacity: 1;
+    color: rgb(226 115 0 / var(--tw-text-opacity, 1))
+}
+
+.tiptap img {
+    margin-top: .75rem;
+    margin-bottom: .75rem;
+    height: auto;
+    max-width: 100%;
+    border-radius: .5rem
+}
+
+.tiptap img.image-selected {
+    outline: 2px dashed #3b82f6;
+    outline-offset: 2px
+}
+
+.tiptap figure[data-type=image-with-caption] {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    max-width: 100%
+}
+
+.tiptap figure[data-type=image-with-caption].image-left {
+    margin-right: 1rem;
+    float: left;
+    clear: left;
+    display: inline-block
+}
+
+.tiptap figure[data-type=image-with-caption].image-center {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    clear: both;
+    display: table
+}
+
+.tiptap figure[data-type=image-with-caption].image-right {
+    margin-left: 1rem;
+    float: right;
+    clear: right;
+    display: inline-block
+}
+
+.tiptap figure[data-type=image-with-caption] img {
+    display: block;
+    border-radius: .5rem
+}
+
+.tiptap figure[data-type=image-with-caption] figcaption {
+    margin-top: .5rem;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    font-style: italic;
+    --tw-text-opacity: 1;
+    color: rgb(77 87 97 / var(--tw-text-opacity, 1));
+    text-align: center;
+    display: block;
+    width: 100%
+}
+
+.image-node-wrapper.align-left {
+    text-align: left
+}
+
+.image-node-wrapper.align-center {
+    text-align: center
+}
+
+.image-node-wrapper.align-right {
+    text-align: right
+}
+
+.image-node-wrapper.selected figure {
+    border-radius: .5rem
+}
+
+.tiptap p.is-editor-empty:first-child:before {
+    pointer-events: none;
+    float: left;
+    height: 0px;
+    --tw-text-opacity: 1;
+    color: rgb(157 164 174 / var(--tw-text-opacity, 1));
+    content: attr(data-placeholder)
+}
+
+.tiptap.is-editor-empty:before {
+    pointer-events: none;
+    float: left;
+    height: 0px;
+    --tw-text-opacity: 1;
+    color: rgb(157 164 174 / var(--tw-text-opacity, 1));
+    content: attr(data-placeholder)
+}
+
+.tiptap:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px
+}
