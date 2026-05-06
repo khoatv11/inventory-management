@@ -1,5 +1,6 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="light-mode">
     <div class="app-container">
         <!-- Sidebar -->
@@ -20,7 +22,7 @@
                     <h2>Inventory<span class="text-primary">Pro</span></h2>
                 </div>
             </div>
-            
+
             <nav class="sidebar-nav">
 
                 <div class="nav-group">
@@ -29,10 +31,10 @@
                         <i class="fa-solid fa-scale-balanced"></i>
                         <span>Đơn vị tính</span>
                     </a>
-                    <a href="products.html" class="nav-item">
+                    <!-- <a href="products.html" class="nav-item">
                         <i class="fa-solid fa-box-open"></i>
                         <span>Quản lý sản phẩm</span>
-                    </a>
+                    </a> -->
                 </div>
 
                 <div class="nav-group">
@@ -41,10 +43,10 @@
                         <i class="fa-solid fa-file-invoice"></i>
                         <span>Phiếu ĐC tồn kho</span>
                     </a>
-                    <a href="returns.html" class="nav-item">
+                    <!-- <a href="returns.html" class="nav-item">
                         <i class="fa-solid fa-arrow-rotate-left"></i>
                         <span>Yêu cầu hoàn hủy</span>
-                    </a>
+                    </a> -->
                 </div>
 
                 <div class="nav-group">
@@ -59,7 +61,7 @@
                     </a>
                 </div>
             </nav>
-            
+
             <div class="sidebar-footer">
                 <div class="user-profile">
                     <img src="https://ui-avatars.com/api/?name=Admin&background=F5821F&color=fff" alt="Admin">
@@ -87,30 +89,37 @@
             <div class="view-container">
                 <div class="page-header">
                     <div>
-                        <div style="margin-bottom: 0.5rem;"><a href="adjustments.html" style="color: #64748b; text-decoration: none; font-size: 0.9rem;"><i class="fa-solid fa-arrow-left"></i> Quay lại Danh sách</a></div>
+                        <div style="margin-bottom: 0.5rem;"><a href="adjustments.html"
+                                style="color: #64748b; text-decoration: none; font-size: 0.9rem;"><i
+                                    class="fa-solid fa-arrow-left"></i> Quay lại Danh sách</a></div>
                         <h1 class="page-title">Tạo mới Phiếu Điều chỉnh Tồn kho</h1>
                     </div>
                     <div class="header-actions">
                         <button class="btn btn-outline" onclick="window.location.href='adjustments.html'">Hủy</button>
                         <button class="btn btn-outline">Lưu Nháp</button>
-                        <button class="btn btn-primary" onclick="window.location.href='adjustments.html'">Hoàn thành & Gửi Duyệt</button>
+                        <button class="btn btn-primary" onclick="window.location.href='adjustments.html'">Hoàn thành &
+                            Gửi Duyệt</button>
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <div class="form-group">
                         <label>Lý do điều chỉnh <span class="text-red">*</span></label>
-                        <textarea class="form-control" rows="2" placeholder="VD: Kiểm kê định kỳ, Hàng hư hỏng..."></textarea>
+                        <textarea class="form-control" rows="2"
+                            placeholder="VD: Kiểm kê định kỳ, Hàng hư hỏng..."></textarea>
                     </div>
-                    
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin: 2rem 0 1rem;">
+
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin: 2rem 0 1rem;">
                         <h4 style="color: #1e293b; margin: 0;">Danh sách Sản phẩm</h4>
                         <div>
-                            <button class="btn btn-outline btn-sm" style="margin-right: 0.5rem;"><i class="fa-solid fa-download"></i> Tải Template</button>
-                            <button class="btn btn-outline btn-sm"><i class="fa-solid fa-file-import"></i> Import Excel</button>
+                            <button class="btn btn-outline btn-sm" style="margin-right: 0.5rem;"><i
+                                    class="fa-solid fa-download"></i> Tải Template</button>
+                            <button class="btn btn-outline btn-sm"><i class="fa-solid fa-file-import"></i> Import
+                                Excel</button>
                         </div>
                     </div>
-                    
+
                     <div style="overflow-x: auto;">
                         <table class="data-table border-table">
                             <thead>
@@ -141,7 +150,8 @@
                                         </select>
                                     </td>
                                     <td><input type="number" class="form-control" value="2" style="width: 80px;"></td>
-                                    <td><button class="action-btn text-red"><i class="fa-solid fa-trash"></i></button></td>
+                                    <td><button class="action-btn text-red"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td style="font-weight: 500; color: #0f172a;">Chuột không dây Logitech</td>
@@ -157,17 +167,20 @@
                                         </select>
                                     </td>
                                     <td><input type="number" class="form-control" value="5" style="width: 80px;"></td>
-                                    <td><button class="action-btn text-red"><i class="fa-solid fa-trash"></i></button></td>
+                                    <td><button class="action-btn text-red"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    
-                    <button class="btn btn-outline btn-sm" style="margin-top: 15px;"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</button>
-                    
+
+                    <button class="btn btn-outline btn-sm" style="margin-top: 15px;"><i class="fa-solid fa-plus"></i>
+                        Thêm sản phẩm</button>
+
                     <div class="form-group" style="margin-top: 2rem;">
                         <label>Ghi chú thêm</label>
-                        <textarea class="form-control" rows="3" placeholder="Nhập ghi chú chi tiết cho phiếu điều chỉnh..."></textarea>
+                        <textarea class="form-control" rows="3"
+                            placeholder="Nhập ghi chú chi tiết cho phiếu điều chỉnh..."></textarea>
                     </div>
                 </div>
             </div>
@@ -175,4 +188,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
