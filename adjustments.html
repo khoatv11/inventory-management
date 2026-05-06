@@ -103,7 +103,7 @@
                             <div class="stat-icon bg-blue-light"><i class="fa-solid fa-file-signature text-blue"></i>
                             </div>
                             <div class="stat-details">
-                                <h3>Phiếu chờ duyệt</h3>
+                                <h3>Tổng phiếu nháp</h3>
                                 <p class="stat-number">12</p>
                             </div>
                         </div>
@@ -129,8 +129,7 @@
                                 <select class="form-control" style="width: 100%;">
                                     <option>Tất cả trạng thái</option>
                                     <option>Nháp</option>
-                                    <option>Chờ duyệt</option>
-                                    <option>Đã duyệt</option>
+                                    <option>Đã áp dụng</option>
                                 </select>
                             </div>
                         </div>
@@ -138,8 +137,11 @@
                             <thead>
                                 <tr>
                                     <th>Mã Phiếu</th>
+                                    <th>Partner</th>
                                     <th>Người tạo</th>
                                     <th>Ngày tạo</th>
+                                    <th>Người chỉnh sửa</th>
+                                    <th>Ngày chỉnh sửa</th>
                                     <th>Lý do</th>
                                     <th>Trạng thái</th>
                                     <th>Thao tác</th>
@@ -149,18 +151,23 @@
                                 <tr>
                                     <td>PDC-2026-001</td>
                                     <td>Partner A</td>
+                                    <td>Admin User</td>
+                                    <td>29/04/2026</td>
+                                    <td>Admin User</td>
                                     <td>29/04/2026</td>
                                     <td>Kiểm kê kho tháng 4</td>
-                                    <td><span class="status-badge status-warning">Chờ duyệt</span></td>
+                                    <td><span class="status-badge status-success">Đã áp dụng</span></td>
                                     <td>
-                                        <button class="action-btn" title="Xem chi tiết" onclick="window.location.href='adjustment-detail.html'"><i
+                                        <button class="action-btn" title="Xem chi tiết"
+                                            onclick="window.location.href='adjustment-detail.html'"><i
                                                 class="fa-solid fa-eye"></i></button>
-                                        <button class="action-btn text-primary" title="Duyệt"><i
-                                                class="fa-solid fa-check-double"></i></button>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>PDC-2026-002</td>
+                                    <td>Partner C</td>
+                                    <td>Admin User</td>
+                                    <td>28/04/2026</td>
                                     <td>Admin User</td>
                                     <td>28/04/2026</td>
                                     <td>Hàng hư hỏng</td>
@@ -175,11 +182,15 @@
                                 <tr>
                                     <td>PDC-2026-003</td>
                                     <td>Partner B</td>
+                                    <td>Nhân viên A</td>
                                     <td>25/04/2026</td>
+                                    <td>Nhân viên B</td>
+                                    <td>26/04/2026</td>
                                     <td>Nhập hàng bù</td>
-                                    <td><span class="status-badge status-success">Đã duyệt</span></td>
+                                    <td><span class="status-badge status-success">Đã áp dụng</span></td>
                                     <td>
-                                        <button class="action-btn" title="Xem chi tiết" onclick="window.location.href='adjustment-detail.html'"><i
+                                        <button class="action-btn" title="Xem chi tiết"
+                                            onclick="window.location.href='adjustment-detail.html'"><i
                                                 class="fa-solid fa-eye"></i></button>
                                     </td>
                                 </tr>
