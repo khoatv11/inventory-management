@@ -57,7 +57,7 @@
                     </a>
                     <a href="report-overall.html" class="nav-item active">
                         <i class="fa-solid fa-warehouse"></i>
-                        <span>Tồn kho tổng</span>
+                        <span>Báo cáo tồn kho</span>
                     </a>
                 </div>
             </nav>
@@ -90,16 +90,17 @@
                 <div id="view-report-overall" class="view active">
                     <div class="page-header">
                         <div>
-                            <h1 class="page-title">Báo cáo Tồn kho Tổng</h1>
+                            <h1 class="page-title">Báo cáo tồn kho</h1>
                         </div>
                         <button class="btn btn-outline"><i class="fa-solid fa-file-export"></i> Xuất Excel</button>
                     </div>
                     <div class="card">
                         <div class="table-filters"
                             style="display: flex; gap: 0.75rem; margin-bottom: 1.25rem; align-items: center; flex-wrap: wrap;">
-                            <input type="text" class="form-control" placeholder="Tìm mã SP, tên sản phẩm..."
+                            <input type="text" class="form-control" placeholder="Tìm theo tên hoặc mã sản phẩm..."
                                 style="flex: 1; min-width: 220px;">
-
+                            <input type="text" class="form-control" placeholder="Tìm theo danh mục sản phẩm"
+                                style="flex: 1; min-width: 220px;">
                             <input type="text" list="partner-list" class="form-control" placeholder="Partner..."
                                 value="Tất cả Partner" style="width: 180px;">
                             <datalist id="partner-list">
@@ -118,6 +119,7 @@
                         <table class="data-table">
                             <thead>
                                 <tr>
+                                    <th style="width: 80px; text-align: center;">STT</th>
                                     <th>Mã SP</th>
                                     <th>Tên Sản phẩm</th>
                                     <th>Cấu hình</th>
@@ -132,13 +134,14 @@
                             </thead>
                             <tbody>
                                 <tr>
+                                    <td style="text-align: center; font-weight: 500;">1</td>
                                     <td>SP001</td>
                                     <td>Laptop Dell XPS 13</td>
                                     <td>Core i7, 16GB, 512GB</td>
                                     <td>Cái</td>
                                     <td>Partner A</td>
                                     <td>40</td>
-                                    <td class="text-success">+8</td>
+                                    <td class=" text-success">+8</td>
                                     <td>0</td>
                                     <td><strong>48</strong></td>
                                     <td style="text-align: center;">
@@ -149,6 +152,7 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td style="text-align: center; font-weight: 500;">2</td>
                                     <td>SP003</td>
                                     <td>Bàn phím cơ Keychron</td>
                                     <td>K8 Pro, Red Switch</td>
@@ -167,14 +171,18 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="pagination" style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
-                            <span style="color: #64748b; font-size: 0.9rem;">Hiá»ƒn thá»‹ 1-10 cá»§a 50 káº¿t quáº£</span>
+                        <div class="pagination"
+                            style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem;">
+                            <span style="color: #64748b; font-size: 0.9rem;">Hiá»ƒn thá»‹ 1-10 cá»§a 50 káº¿t
+                                quáº£</span>
                             <div style="display: flex; gap: 0.5rem;">
-                                <button class="btn btn-outline btn-sm" disabled><i class="fa-solid fa-chevron-left"></i></button>
+                                <button class="btn btn-outline btn-sm" disabled><i
+                                        class="fa-solid fa-chevron-left"></i></button>
                                 <button class="btn btn-primary btn-sm">1</button>
                                 <button class="btn btn-outline btn-sm">2</button>
                                 <button class="btn btn-outline btn-sm">3</button>
-                                <button class="btn btn-outline btn-sm"><i class="fa-solid fa-chevron-right"></i></button>
+                                <button class="btn btn-outline btn-sm"><i
+                                        class="fa-solid fa-chevron-right"></i></button>
                             </div>
                         </div>
                     </div>

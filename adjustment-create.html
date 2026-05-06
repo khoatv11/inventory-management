@@ -57,7 +57,7 @@
                     </a>
                     <a href="report-overall.html" class="nav-item">
                         <i class="fa-solid fa-warehouse"></i>
-                        <span>Tồn kho tổng</span>
+                        <span>Báo cáo tồn kho</span>
                     </a>
                 </div>
             </nav>
@@ -97,8 +97,8 @@
                     <div class="header-actions">
                         <button class="btn btn-outline" onclick="window.location.href='adjustments.html'">Hủy</button>
                         <button class="btn btn-outline">Lưu Nháp</button>
-                        <button class="btn btn-primary" onclick="window.location.href='adjustments.html'">Hoàn thành &
-                            Gửi Duyệt</button>
+                        <button class="btn btn-primary" onclick="window.location.href='adjustments.html'">Lưu & Áp
+                            dụng</button>
                     </div>
                 </div>
 
@@ -113,17 +113,26 @@
                         style="display: flex; justify-content: space-between; align-items: center; margin: 2rem 0 1rem;">
                         <h4 style="color: #1e293b; margin: 0;">Danh sách Sản phẩm</h4>
                         <div>
-                            <button class="btn btn-outline btn-sm" style="margin-right: 0.5rem;"><i
+                            <button class="btn btn-outline btn" style="margin-right: 0.5rem;"><i
                                     class="fa-solid fa-download"></i> Tải Template</button>
-                            <button class="btn btn-outline btn-sm"><i class="fa-solid fa-file-import"></i> Import
+                            <button class="btn btn-outline btn"><i class="fa-solid fa-file-import"></i> Import
                                 Excel</button>
                         </div>
+                    </div>
+
+                    <div style="position: relative; margin-bottom: 1.5rem;">
+                        <i class="fa-solid fa-search"
+                            style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: #94a3b8;"></i>
+                        <input type="text" class="form-control"
+                            placeholder="Tìm kiếm sản phẩm (theo mã hoặc tên) để thêm vào danh sách điều chỉnh..."
+                            style="padding-left: 2.75rem; width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);">
                     </div>
 
                     <div style="overflow-x: auto;">
                         <table class="data-table border-table">
                             <thead>
                                 <tr>
+                                    <th style="text-align: center; width: 60px;">STT</th>
                                     <th>Sản phẩm</th>
                                     <th>Cấu hình</th>
                                     <th style="text-align: center;">ĐVT</th>
@@ -133,7 +142,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr style="background-color: #ffb6b6;">
+                                <tr>
+                                    <td style="text-align: center; font-weight: 500;">1</td>
                                     <td style="font-weight: 500; color: #0f172a;">Laptop Dell XPS 13</td>
                                     <td style="color: #0f172a;">Core i7 / 16GB / 512GB SSD</td>
                                     <td style="text-align: center;">Cái</td>
@@ -146,7 +156,8 @@
                                                 class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
-                                <tr style="background-color: #ffb6b6;">
+                                <tr>
+                                    <td style="text-align: center; font-weight: 500;">2</td>
                                     <td style="font-weight: 500; color: #0f172a;">Bàn phím cơ Keychron K8</td>
                                     <td style="color: #0f172a;">Brown Switch / Nhôm</td>
                                     <td style="text-align: center;">Cái</td>
@@ -160,6 +171,7 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td style="text-align: center; font-weight: 500;">3</td>
                                     <td style="font-weight: 500; color: #0f172a;">Chuột không dây Logitech</td>
                                     <td style="color: #0f172a;">Màu đen</td>
                                     <td style="text-align: center;">Cái</td>
@@ -173,6 +185,7 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td style="text-align: center; font-weight: 500;">4</td>
                                     <td style="font-weight: 500; color: #0f172a;">Màn hình LG 24 inch</td>
                                     <td style="color: #0f172a;">IPS / 75Hz / FreeSync</td>
                                     <td style="text-align: center;">Cái</td>
@@ -185,7 +198,8 @@
                                                 class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
-                                <tr style="background-color: #ffb6b6;">
+                                <tr>
+                                    <td style="text-align: center; font-weight: 500;">5</td>
                                     <td style="font-weight: 500; color: #0f172a;">Tai nghe Sony WH-1000XM4</td>
                                     <td style="color: #0f172a;">Màu bạc</td>
                                     <td style="text-align: center;">Cái</td>
@@ -201,15 +215,11 @@
                             </tbody>
                         </table>
                     </div>
-
-                    <button class="btn btn-outline btn" style="margin-top: 15px;"><i class="fa-solid fa-plus"></i>
-                        Thêm sản phẩm</button>
-
-                    <div class="form-group" style="margin-top: 2rem;">
+                    <!-- <div class="form-group" style="margin-top: 2rem;">
                         <label>Ghi chú thêm</label>
                         <textarea class="form-control" rows="3"
                             placeholder="Nhập ghi chú chi tiết cho phiếu điều chỉnh..."></textarea>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </main>
